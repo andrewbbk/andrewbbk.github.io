@@ -9,14 +9,106 @@
     <script src="js/main.js"></script>
 </head>
 
-<body>
+<div style="text-align: center">
     <h1>Norco one 25</h1>
     <h2>Street/dirt</h2>
     <p>26' wheels</p>
-    <p style="color: red">Adult only</p>
-    <img src ="images/norco_one_25.png" alt="norco one 25">
+    <p style="color: red;font-size: 40px">Adult only</p>
+    <div style="text-align: center">
+        <img src ="images/norco_one_25.png" alt="norco one 25">
+    </div>
+</div>
     <!-- <img src ="../../imgname.png"> если документ лежит на два уровня выше -->
     <!-- <img src ="../../img/imgname.png"> если документ лежит на два уровня выше и внутри папки img -->
+
+    <!-- <p> - абзац, одна или несколько строк <p/> -->
+    <p>&copy;</p> <!-- мнемоника copy -->
+    <p>&nbsp</p>  <!-- неразрывный пробел -->
+
+    <ol> <!-- нумерованный список-->
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+    </ol>
+
+    <ul> <!-- ненумерованный список-->
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+    </ul>
+
+    <ol>
+        <li>Parent element</li>
+            <ul>
+                <li>Child elements</li>
+                    <ul>
+                        <li>Child level 3</li>
+                        <li>Child level 3</li>
+                        <li>Child level 3</li>
+                        <li>Child level 3</li>
+                    </ul>
+                <li>Child elements</li>
+            </ul>
+        <li>Parent element 2</li>
+    </ol>
+
+    <p>
+        <b>Instead of b</b> we should use tag <strong>strong</strong>
+    </p>
+
+    <p>
+        <i>Instead of I</i> we should use tag <em>em</em>
+    </p>
+
+    <span>Строчный пустой элемент span для оформления строки (без стилей и смысла)</span>
+
+
+    <p>
+        <a href="https://www.google.com.ua">Завис - загугли)</a>
+    </p>
+
+    <div style="font-size:30px;text-align:center">
+        <a href="testlink.html">Testlink1</a>
+        <a href="testlink2.html">Testlink2</a>
+    </div>
+
+    <a href="https://google.com" target="_blank" title="I wanna go to google">google</a> <!-- open link in new tab -->
+    <p></p>
+    <p></p>
+
+<div style="text-align: center">
+    <img src="http://bigairtriples.com/wp-content/uploads/sites/8/2013/11/alessandro-barbero-sequence-640x380.jpeg" alt="360 whip" width="700" height="350">
+</div>
+
+<p></p>
+
+<img src="http://bigairtriples.com/wp-content/uploads/sites/8/2013/11/alessandro-barbero-sequence-640x380.jpeg" alt="360 whip" width="700" height="350" style="margin:auto;display:block">
+
+<p></p>
+
+<table border="1" width="100%"> <!-- таблица -->
+
+    <thead> <!-- заголовок таблицы -->
+        <tr> <!-- строки -->
+            <th>Column1</th><!-- колонки -->
+            <th>Column2</th>
+        </tr>
+    </thead>
+
+    <tbody> <!-- тело таблицы -->   <!-- попробовать атрибут rowspan & colspan (объед по горизонтали и по вертикали) <td rowspan="2" -->
+        <tr> <!-- строки -->
+            <td>1</td><!-- колонки -->
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
 </body>
 
 </html>
