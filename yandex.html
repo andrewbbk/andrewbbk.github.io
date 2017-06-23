@@ -32,8 +32,6 @@
     и новая логика. Всё это напрямую влияет на скорость работы интерфейса.
 </p>
 
-<p></p>
-
 <p style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
@@ -42,8 +40,6 @@
     <span style="color: red">Ч</span>то мы измеряем
 </p>
 
-<p></p>
-
 <p style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
@@ -51,8 +47,6 @@
     font-size: 18px">
     <span style="color: red">Э</span>тапы первой загрузки:
 </p>
-
-<p></p>
 
 <ul style="margin-left: 150px;
     margin-right: 150px;
@@ -66,8 +60,6 @@
     <li>отрисовка</li>
 </ul>
 
-<p></p>
-
 <p style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
@@ -75,8 +67,6 @@
     font-size: 18px">
     <span style="color: red">Э</span>тапы отрисовки любой страницы:
 </p>
-
-<p></p>
 
 <ul style="margin-left: 150px;
     margin-right: 150px;
@@ -89,7 +79,255 @@
     <li>обновление DOM</li>
 </ul>
 
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    — «<em>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</em>» - говорим мы<br>
+    — «<em>Что же дальше?</em>» - вопрошаете вы<br>
+    — «<em>А давай построим график!</em>» - отвечаем мы<br>
+    — «<em>А что будем считать?</em>» - уточняете вы
+</p>
 
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <span style="color: red">К</span>ак вы знаете, медиана – это серединное, а не среднее значение в выборке.<Br>
+    Если у нас имеются числа 1, 2, 2, 3, 8, 10, 20, то медиана – 3, а среднее – 6,5.<Br>
+    В общем случае медиана отлично показывает, сколько грузится средний пользователь.<br>
+    <br>
+    В случае ускорения или замедления медиана, конечно, изменится. Но она не может
+    рассказать, сколько пользователей ускорилось, а сколько замедлилось.<br>
+    <br>
+    <span style="color: red">А</span>PDEX – метрика, которая сразу говорит: хорошо или плохо. Метрика
+    работает очень просто. Мы выбираем временной интервал [0; t], такой, что если
+    время показа страницы попало в него, то пользователь счастлив. Берем еще один
+    интервал, (t; 4t] (в четыре раза больше первого), и считаем, что если страница
+    показана за это время, то пользователь в целом удовлетворен скоростью работы,
+    но уже не настолько счастлив. И применяем формулу:<br>
+    <br>
+    (кол-во счастливых пользователей + кол-во удовлетворенных / 2) / (кол-во всех).
+    Получается значение от нуля до единицы, которое, видимо, лучше всего показывает,
+    хорошо или плохо работает почта.<br>
+    <br>
+</p>
+
+
+    <p
+    style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 25px">
+    <span style="color:red">К</span>ак мы измеряем<br>
+    </p>
+
+
+</p>
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <br>
+    Сейчас модуль обновления сам логирует все свои стадии, и можно легко понять
+    причину замедления: медленнее стал отвечать сервер либо слишком долго
+    выполняется JavaScript. Выглядит это примерно так:<br>
+    <br>
+    this.timings['look-ma-im-start'] = Date.now();<br>
+    this.timings['look-ma-finish'] = Date.now();<br>
+    <br>
+    C помощью Date.now() мы получаем текущее время. Все тайминги собираются и при
+    отправке рассчитываются. На этапах разница между “end” и “start” не считается,
+    а все вычисления производятся в конце:<br>
+    <br>
+    var totalTime = this.timings['look-ma-finish'] - this.timings['look-ma-im-start'];<br>
+    <br>
+    И на сервер прилетают подобные записи:<br>
+    <br>
+    serverResponse=50&domUpdate=60<br>
+</p>
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 25px">
+    <span style="color: red">К</span>ак мы ускоряем
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    Чтобы снизить время загрузки почты при выходе новых версий,
+    мы уже делаем следующее:
+</p>
+
+<ul style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <li>включаем gzip</li>
+    <li>выставляем заголовки кэширования</li>
+    <li>фризим CSS, JS, шаблоны и картинки</li>
+    <li>используем CDN</li>
+</ul>
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <span style="color: red">М</span>ы подумали: «А что если хранить где-то старую версию файлов, а при выходе новой
+    передавать только diff между ней и той, которая сохранена у пользователя?»
+    В браузере же останется просто наложить патч на клиенте.<br>
+    <br>
+    На самое деле эта идея не нова. Уже существуют стандарты для HTTP — например,
+    RFC 3229 «Delta encoding in HTTP» и «Google SDHC», — но по разным причинам они
+    не получили должного распространения в браузерах и на серверах.<br>
+    <br>
+    Мы же решили сделать свой аналог на JS. Чтобы реализовать этот метод обновления,
+    начали искать реализации diff на JS. На популярных хостингах кода нашли
+    библиотеки:<br>
+    <br>
+    - VCDiff<br>
+    - google-diff-patch-match<br>
+    <br>
+</p>
+
+<table width="60%"
+       border="1"
+       style="margin-left: 250px">
+    <caption style="color: dimgray;
+       font-family: Roboto;
+       font-size: 18px">Для окончательного выбора библиотеки нам нужно сравнить: <br>
+    <br>
+    </caption>
+
+    <thead> <!-- заголовок таблицы -->
+        <tr> <!-- строки -->
+            <th width="30%">Библиотека</th><!-- колонки -->
+            <th width="30%">IE 9</th>
+            <th width="30%">Opera 12</th>
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+                <td>vcdiff</td>
+                <td>8</td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>google diff</td>
+                <td>1363 </td>
+                <td>76</td>
+            </tr>
+
+    </tbody>
+</table>
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <span style="color: red">П</span>осле того как мы определились с библиотекой для диффа, нужно определиться с тем,
+    где и как хранить статику на клиенте.<br>
+    <br>
+    Формат файла с патчами для проекта выглядит так:
+</p>
+
+<img src="images/file_format.png" style="margin-left: 450px">
+
+<p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+    <span style="color: red">Т</span>о есть это обычный массив из объектов. Каждый объект — отдельный ресурс. У
+    каждого объекта есть три свойства. k — названия ключа в localStorage для этого
+    ресурса. p — патч для ресурса, который сгенерировал vcdiff. s — чексумма для
+    ресурса актуальной версии, чтобы потом можно было проверить правильность
+    наложения патча на клиенте. Чексумма вычисляется по алгоритму Флетчера.<br>
+    <br>
+    <span style="color: red">А</span>лгоритм Бройдена — Флетчера — Гольдфарба — Шанно (BFGS)
+    — итерационный метод численной оптимизации, предназначенный для
+    нахождения локального максимума/минимума нелинейного функционала
+    без ограничений.<br>
+    <br>
+    Почему именно алгоритм Флетчера, а не другие популярные алгоритмы вроде:
+    CRC16/32 - алгоритм нахождения контрольной суммы, предназначенный для проверки
+    целостности данных
+    md5 - 128-битный алгоритм хеширования. Предназначен для создания «отпечатков»
+    или дайджестов сообщения произвольной длины и последующей проверки
+    их подлинности.<br>
+    <br>
+    Потому что он быстрый, компактный и легок в реализации.<br>
+    <br>
+    <span style="color: red">Итог</span><br>
+    <br>
+    Фактически мы экономим 80-90% трафика.
+</p>
+
+<table width="60%"
+       border="1"
+       style="margin-left: 250px">
+    <caption style="color: dimgray;
+       font-family: Roboto;
+       font-size: 18px">Размер загружаемой статитки в байтах: <br>
+        <br>
+    </caption>
+
+    <thead> <!-- заголовок таблицы -->
+    <tr> <!-- строки -->
+        <th width="30%">Релиз</th><!-- колонки -->
+        <th width="30%">С патчем</th>
+        <th width="30%">Без патча</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>7.7.20</td>
+        <td>397</td>
+        <td>174 549</td>
+    </tr>
+
+    <tr>
+        <td>7.7.21</td>
+        <td>383 </td>
+        <td>53 995</td>
+    </tr>
+
+    <tr>
+        <td>7.7.22 </td>
+        <td>483</td>
+        <td>3 995</td>
+    </tr>
+
+    </tbody>
+</table>
+
+<footer>
+    <p style="margin-left: 150px;
+    margin-right: 150px;
+    color: dimgray;
+    font-family: Roboto;
+    font-size: 18px">
+        Автор: @doochik<br>
+        С++ разработик<br>
+        Электронная почта: (doochik@yandex-team.ru)<br>
+        Компания: Яндекс
+    <p>
+</footer>
 
 
 
