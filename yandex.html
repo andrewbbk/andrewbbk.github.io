@@ -5,7 +5,7 @@
     <title>Educational project</title>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles/yandex_styles.css">
     <script src="js/main.js"></script>
 </head>
 
@@ -15,15 +15,11 @@
     <img src="http://lugansk.site/wp-content/uploads/2017/05/full_1372333959-770x439_c.jpg" width="800" height="300" alt="Yandex почта"/>
 </div>
 
-<div style="text-align: center; font-family: roboto; color: darkgrey; font-size: 30px" ">
-    <h1><span style="color: red">Я</span>НДЕКС.ПОЧТА: КАК МЫ ИЗМЕРЯЕМ СКОРОСТЬ ЗАГРУЗКИ И УЛУЧШАЕМ ЕЁ</h1>
-</div>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<h1 id="main-title"><span style="color: red">я</span>ндекс.почта: как мы измеряем скорость загрузки и улучшаем ее</h1>
+
+
+<p>
     <span style="color: red">Е</span>сли ваш сайт медленно грузится, вы рискуете тем, что люди не оценят ни то,
     какой он красивый, ни то, какой он удобный. Никому не понравится, когда все
     тормозит.<br>
@@ -32,26 +28,17 @@
     и новая логика. Всё это напрямую влияет на скорость работы интерфейса.
 </p>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 25px">
-    <span style="color: red">Ч</span>то мы измеряем
-</p>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<h2 class="title">Что мы измеряем</h2>
+
+<p>
     <span style="color: red">Э</span>тапы первой загрузки:
 </p>
 
 <ul style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 18px">
     <li>подготовка</li>
     <li>загрузка статики (HTTP-запрос и парсинг)</li>
@@ -60,18 +47,14 @@
     <li>отрисовка</li>
 </ul>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<p>
     <span style="color: red">Э</span>тапы отрисовки любой страницы:
 </p>
 
 <ul style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 18px">
     <li>подготовка к запросу на сервер</li>
     <li>запрос данных с сервера</li>
@@ -79,23 +62,15 @@
     <li>обновление DOM</li>
 </ul>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
-    — «<em>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</em>» - говорим мы<br>
-    — «<em>Что же дальше?</em>» - вопрошаете вы<br>
-    — «<em>А давай построим график!</em>» - отвечаем мы<br>
-    — «<em>А что будем считать?</em>» - уточняете вы
-</p>
+<ul>
+    <li class="direct_speech">— «<em>Ок, теперь у нас есть метрики, мы можем отправить их на сервер</em>» - говорим мы</li>
+    <li class="direct_speech">— «<em>Что же дальше?</em>» - вопрошаете вы</li>
+    <li class="direct_speech">— «<em>А давай построим график!</em>» - отвечаем мы</li>
+    <li class="direct_speech">— «<em>А что будем считать?</em>» - уточняете вы</li>
+</ul>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
-    <span style="color: red">К</span>ак вы знаете, медиана – это серединное, а не среднее значение в выборке.<Br>
+<p>
+    К</span>ак вы знаете, медиана – это серединное, а не среднее значение в выборке.<Br>
     Если у нас имеются числа 1, 2, 2, 3, 8, 10, 20, то медиана – 3, а среднее – 6,5.<Br>
     В общем случае медиана отлично показывает, сколько грузится средний пользователь.<br>
     <br>
@@ -116,23 +91,10 @@
 </p>
 
 
-    <p
-    style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 25px">
-    <span style="color:red">К</span>ак мы измеряем<br>
-    </p>
+<h2 class="title">Как мы измеряем</h2>
 
 
-</p>
-
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<p>
     <br>
     Сейчас модуль обновления сам логирует все свои стадии, и можно легко понять
     причину замедления: медленнее стал отвечать сервер либо слишком долго
@@ -152,18 +114,10 @@
     serverResponse=50&domUpdate=60<br>
 </p>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 25px">
-    <span style="color: red">К</span>ак мы ускоряем
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<h2 class="title">Как мы ускоряем</h2>
+
+<p>
     Чтобы снизить время загрузки почты при выходе новых версий,
     мы уже делаем следующее:
 </p>
@@ -171,7 +125,7 @@
 <ul style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 18px">
     <li>включаем gzip</li>
     <li>выставляем заголовки кэширования</li>
@@ -179,11 +133,7 @@
     <li>используем CDN</li>
 </ul>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<p>
     <span style="color: red">М</span>ы подумали: «А что если хранить где-то старую версию файлов, а при выходе новой
     передавать только diff между ней и той, которая сохранена у пользователя?»
     В браузере же останется просто наложить патч на клиенте.<br>
@@ -202,10 +152,10 @@
 </p>
 
 <table width="60%"
-       border="1"
+
        style="margin-left: 250px">
     <caption style="color: dimgray;
-       font-family: Roboto;
+       font-family: Roboto, serif;
        font-size: 18px">Для окончательного выбора библиотеки нам нужно сравнить: <br>
     <br>
     </caption>
@@ -234,11 +184,7 @@
     </tbody>
 </table>
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<p>
     <span style="color: red">П</span>осле того как мы определились с библиотекой для диффа, нужно определиться с тем,
     где и как хранить статику на клиенте.<br>
     <br>
@@ -247,11 +193,7 @@
 
 <img src="images/file_format.png" style="margin-left: 450px">
 
-<p style="margin-left: 150px;
-    margin-right: 150px;
-    color: dimgray;
-    font-family: Roboto;
-    font-size: 18px">
+<p>
     <span style="color: red">Т</span>о есть это обычный массив из объектов. Каждый объект — отдельный ресурс. У
     каждого объекта есть три свойства. k — названия ключа в localStorage для этого
     ресурса. p — патч для ресурса, который сгенерировал vcdiff. s — чексумма для
@@ -281,7 +223,7 @@
        border="1"
        style="margin-left: 250px">
     <caption style="color: dimgray;
-       font-family: Roboto;
+       font-family: Roboto, serif;
        font-size: 18px">Размер загружаемой статитки в байтах: <br>
         <br>
     </caption>
@@ -320,7 +262,7 @@
     <p style="margin-left: 150px;
     margin-right: 150px;
     color: dimgray;
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 18px">
         Автор: @doochik<br>
         С++ разработик<br>

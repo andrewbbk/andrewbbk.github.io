@@ -1,0 +1,86 @@
+html {
+    background: lavender;
+}
+
+
+p {
+    color: red;
+    font-size: 30px;
+}
+
+
+/*comment */
+
+/* <div class="tringle">.......</div>
+
+ */
+
+
+.traingle {
+    width: 0;
+    height: 0;
+    position: relative;
+}
+
+.traingle::before{
+    content:'';
+    position: absolute;
+    display: block;
+    border: 20px solid transparent;
+    border-top-color: red;
+}
+
+.traingle::after{
+    content:'';
+    position: absolute;
+    display: block;
+    border: 20px solid transparent;
+    border-right-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  structure of CSS */
+
+* {                                   /* all elemens */
+}
+
+html
+body
+
+a:hover
+
+h1
+h2
+h3
+
+
+p {margin: 10 px 0;             /* 1-2-3-4 /*
+}
+
+
+/* header  */
+.logo {}
+.banner {}
+
+
+ul
+
+table
+
+input
+
+button
+
+
+ */
+
