@@ -1,0 +1,51 @@
+html {
+    background: #f2f2f2 ;
+}
+
+.title {
+    color: #555555;
+    font-family: Roboto, serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+p {
+    margin: 15px 150px;
+    font-family: Roboto, serif;
+    font-size: 18px;
+    color: dimgray;
+}
+
+.input-field {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 20px;
+}
+
+.input-label {
+    font-family: Roboto, serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.input-field::-webkit-input-placeholder {
+    color:#cccccc;
+    font-family: Roboto, serif;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.btn-login {
+    font-family: Roboto, serif;
+    font-size: 14px;
+    color: #cccccc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+
