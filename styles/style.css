@@ -1,0 +1,15 @@
+.first {
+    font-size: 30px;
+    color: red;
+}
+
+.first-step {
+    font-size: 40px;
+    background-color: #555555;
+}
+
+.first1 {
+    margin: 40px;
+    font-size: 50px;
+    text-decoration: underline;
+}

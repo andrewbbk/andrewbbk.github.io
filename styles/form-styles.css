@@ -46,6 +46,31 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100px;
+    width: 200px;
+    height: 25px;
+    border: 0px;
+    border-radius: 2px;
 }
 
+.btn-login:hover {
+    background: #555555;
+    color: #cccccc;
+}
+
+span:hover {
+    color: black;
+}
+
+
+.wrap {
+    width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+column1,
+column2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+}

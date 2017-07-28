@@ -1,0 +1,451 @@
+@font-face {
+   font-family: 'Roboto-Bold';
+   src: url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.ttf') format("truetype"),
+        url('../fonts/Roboto-Bold.woff') format('woff');
+   font-weight: bold;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Roboto';
+   src: url('../fonts/Roboto.woff2') format('woff2'),
+        url('../fonts/Roboto.ttf') format("truetype"),
+        url('../fonts/Roboto.woff') format('woff');
+   font-weight: normal;
+   font-style: italic;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: 'Roboto', serif;
+	font-weight: normal;
+	font-style: italic;
+	color: #000 rgba(0,0,0,.7);
+
+}
+
+.my-head_menu-icon {
+	background: url(../images/hipster/button-menu.png) no-repeat;
+	width: 59px;
+	height: 59px;
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	cursor: pointer;
+
+
+}
+
+
+.my-head_menu-icon:hover {
+	opacity: .70;
+}
+
+header {
+ 
+}
+
+
+
+
+
+.page-title {
+ 	text-align: center;	 	
+ 	background: url(../images/hipster/header-bg.jpg) no-repeat;
+ 	background-size: cover;
+ 	position: relative;
+ 	padding: 300px 0;
+}
+
+.text-title {
+	font-size: 65px;
+	font-family: Roboto, serif;
+	text-transform: uppercase;
+	text-align: center; 
+	color: #fff;
+	font-weight: 900;
+	letter-spacing: 12px;
+	border-top: 3px solid rgba(255,255,255,0.5);
+	border-bottom: 3px solid rgba(255,255,255,0.5);
+	display: inline-block;
+}
+
+/*menu*/
+.page-title_aside {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 300px;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+	text-align: left;
+	z-index: 100;
+	display: none;
+}
+
+
+.list-menu {
+	list-style: none;
+	margin: 80px 0 0 20px;
+	padding: 0;
+}
+
+.list-menu li {
+	margin: 0 0 15px;
+	cursor: pointer;
+}
+
+.list-menu li:hover {
+	opacity: .7;
+}
+
+.close {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.close:hover {
+	opacity: .7;
+}
+
+.list-menu a {
+	text-decoration: none;
+	color: #fff;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	margin: 0px 0px 30px;
+	font-family: Roboto, serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.tooltip {
+	width: 190px;
+	height: 20px;
+	border: 1px solid #ccc;
+	padding: 15px;
+	font-size: 14px;
+	background: #fff;
+	position: absolute;
+	bottom: 100%;
+	left: 200px;
+	border-radius: 2px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+	display: none;
+}
+
+.button-wrap {
+	position: relative;
+}
+
+
+/*
+p,
+h1,
+h2,
+span
+ {
+	font-family: Roboto, serif;
+
+
+section {
+ 	background-color: ghostwhite;
+ 	height: 400px;
+ 	padding: 100px;
+}
+
+.pres {
+ 	width: 1000px;
+ 	margin: auto;
+}
+
+.button {
+	display: block;
+	position: relative;
+	height: 30px;
+	width: 200px;
+	background: #E53935;
+	text-align: center;
+	color: white;
+	border-radius: 3px;
+}
+
+.button span {
+	position: absolute;
+	top: 10px;
+	font-family: Roboto, serif;
+
+}
+
+.button:hover {
+	background: #F44336;
+}
+
+.work {
+	background-color: #E0E0E0;
+	height: 400 px;
+	width: 100%;
+	
+}
+
+
+
+
+
+.wrap {
+	width: 100px;
+	margin: 0 auto;
+}
+
+*/
+
+
+
+
+
+/* my information */
+
+.my-section {
+	padding-top: 120px;
+}
+
+.wrap {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.my-image {
+	display: inline-block;
+	vertical-align: top;
+	width: 470px;
+	min-height: 585px;
+	background: url(../images/hipster/PaulLapkin.png) no-repeat;
+}
+
+
+.my-info {
+	display: inline-block;
+	vertical-align: top;
+	width: 670px;
+	margin-top: 100px;
+}
+
+.my-info p {
+	line-height: 1.75em;
+	margin: 30px 0px;
+}
+
+.my-info_button {
+	min-width: 200px;  
+	padding: 10px; 
+	color: #fff;
+	font-size: 16px;	
+	background: #ff2b4a; 
+	border: none;
+	border-radius: 2px;
+}
+
+.my-info_button:hover {
+	opacity: 0.85;
+	cursor: pointer;
+}
+
+/* end my information */
+
+/* for js button*/
+
+.my-info_button_bg 
+{
+	background-color: #bbb;
+	position: relative;
+	left: 100px;
+	
+}
+
+/* fo js button end*/
+
+
+
+/* Working-process */
+
+.process-section {
+	text-align: center;
+	background: #f6f6f6;
+	padding: 120px 0;
+}
+
+.process-section_buttons {
+    margin-top: 50px;
+    font-size: 0;
+}
+
+.process-section_item {
+	margin: 0 9px;
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px; 
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.process-section_design {
+	background: #10c6fc;
+}
+
+.process-section_design .process-section_icon 
+{
+	background-image: url(../images/hipster/button_design.png);
+}
+
+.process-section_dev 
+{
+	background: #835aeb;
+}
+
+.process-section_dev .process-section_icon 
+{
+	background-image: url(../images/hipster/button_development.png);
+}
+
+.process-section_text 
+{
+	background: #002453;
+}
+
+.process-section_text .process-section_icon 
+{
+	background-image: url(../images/hipster/button_testing.png);
+}
+
+.process-section_launch 
+{
+	background: #ff2b4a;
+}
+
+.process-section_launch .process-section_icon {
+	background-image: url(../images/hipster/button_launch.png);
+}
+
+.process-section_icon {
+	display: block;
+	margin: 80px auto 40px;
+	height: 40px;
+	width: 42px;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}
+
+
+/*END of Working-process */
+
+/*  Rewiev */
+
+.rewiev 
+{
+	background-color: #64cbc0;
+	padding: 135px 0;
+
+}
+
+.rewiev-text
+{
+	max-width: 450px;
+	line-height: 1.9em;
+	position: relative;
+	margin-top: 93px;
+}
+
+.rewiev-text::after
+{
+	background-image: url(../images/hipster/kavichki.png);
+	height: 48px;
+	width: 58px;
+	content: "";
+	display: block;
+	margin-bottom: 45px;
+	position: absolute;
+	top: -93px;
+	left: 0;
+
+
+}
+
+
+.rewiev-text::before
+{
+	background-image: url(../images/hipster/podpis.png);
+	content: "";
+	display: block;
+	position: absolute;
+	width: 170px;
+	height: 66px;
+	top: 180px;
+}
+
+.podpis-text
+{
+	display: block;
+	margin-top: 120px;
+
+}
+
+.podpis-text h3 
+{
+	margin-bottom: 15px;
+
+}
+
+/* login-form */
+
+.login-form
+{
+	font-size: 0;
+	padding: 125px 0;
+	background: url(../images/hipster/header-bg.jpg) no-repeat;
+	background-size: cover;
+}
+
+.login-form-column
+{
+	width: 577px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.login-form-column-left 
+{
+	margin-right: 16px;
+
+}
+
+.login-form-box
+{
+	padding: 65px 40px;
+	background: rgba(93,35,96,.3);
+	color: rgba(255,255,255,.7);
+	margin-bottom: 15px;
+background: -webkit-linear-gradient(45deg, rgba(169,3,41,0.3) 0%,rgba(123,0,158,0.3) 100%);
+background: linear-gradient(45deg, rgba(169,3,41,0.3) 0%,rgba(123,0,158,0.3) 100%);
+
+
+}
+
+
+
